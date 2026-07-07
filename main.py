@@ -2,8 +2,12 @@ from models.medicine import Medicine
 from models.grocery import Grocery
 from models.documents import Document
 
+from services.inventory import Inventory
+
 
 def main():
+
+    inventory = Inventory()
 
     medicine = Medicine(
         1,
@@ -30,13 +34,17 @@ def main():
         "Government of India"
     )
 
-    medicine.display()
-    print("-" * 40)
+    inventory.add_item(medicine)
+    inventory.add_item(grocery)
+    inventory.add_item(document)
 
-    grocery.display()
-    print("-" * 40)
-
-    document.display()
+    print("\nBefore deleting:\n")
+    inventory.view_items()
+    
+    inventory.delete_item(2)
+    print("\nAfter deleting:\n")
+    inventory.view_items()
+    inventory.save_items()
 
 
 if __name__ == "__main__":

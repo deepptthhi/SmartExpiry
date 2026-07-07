@@ -1,1 +1,21 @@
-[]
+[
+    {
+        "item_id": 1,
+        "name": "Paracetamol",
+        "category": "Medicine",
+        "quantity": 10,
+        "expiry_date": "20-07-2026",
+        "manufacturer": "Cipla",
+        "dosage": "500 mg",
+        "type": "Medicine"
+    },
+    {
+        "item_id": 3,
+        "name": "Passport",
+        "category": "Document",
+        "quantity": 1,
+        "expiry_date": "20-01-2030",
+        "issued_by": "Government of India",
+        "type": "Document"
+    }
+]
