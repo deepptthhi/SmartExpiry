@@ -1,19 +1,20 @@
-from models.item import Item
+from models.medicine import Medicine
 
 
 def main():
 
-    item = Item(
+    med = Medicine(
         1,
-        "Milk",
-        "Grocery",
-        2,
-        "15-07-2026"
+        "Paracetamol",
+        10,
+        "20-07-2026",
+        "Cipla",
+        "500 mg"
     )
 
-    item.display()
+    med.display()
 
-    print("Expired:", item.is_expired())
+    print("Expired :", med.is_expired())
 
 
 if __name__ == "__main__":
