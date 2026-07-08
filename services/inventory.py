@@ -61,6 +61,40 @@ class Inventory:
                 return
 
         print("\nItem not found.")
+
+
+    # ------------------------
+    # Update Item
+    # ------------------------
+
+    def update_item(self, item_id):
+
+        for item in self.items:
+
+            if item.item_id == item_id:
+
+                print(f"\nUpdating '{item.name}'")
+
+                new_name = input("New Name (leave blank to keep same): ")
+
+                if new_name:
+                    item.name = new_name
+
+                new_quantity = input("New Quantity (leave blank to keep same): ")
+
+                if new_quantity:
+                    item.quantity = int(new_quantity)
+
+                new_expiry = input("New Expiry Date (DD-MM-YYYY, leave blank to keep same): ")
+
+                if new_expiry:
+                    item.expiry_date = new_expiry
+
+                print("\nItem updated successfully!")
+
+                return
+
+        print("\nItem not found.")
     
     # ------------------------
     # Save Items

@@ -1,10 +1,10 @@
 [
     {
         "item_id": 1,
-        "name": "Paracetamol",
+        "name": "Dolo 650",
         "category": "Medicine",
-        "quantity": 10,
-        "expiry_date": "20-07-2026",
+        "quantity": 20,
+        "expiry_date": "25-08-2026",
         "manufacturer": "Cipla",
         "dosage": "500 mg",
         "type": "Medicine"
