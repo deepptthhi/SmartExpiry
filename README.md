@@ -1,59 +1,36 @@
 # 📦 SmartExpiry
 
-> My first Python OOP project — built to solve a simple everyday problem.
+A Python based inventory manager that helps track the expiry dates of medicines, groceries, and important documents.
 
-SmartExpiry is a simple Python project I built while learning **Object Oriented Programming (OOP)**.
+SmartExpiry is my first Object Oriented Programming (OOP) project in Python. I built it to practice OOP concepts by solving a simple everyday problem instead of creating a traditional beginner project like a student or library management system.
 
-The idea came from a small everyday problem. We often forget expiry dates of medicines, groceries, or even important documents until it's too late. Instead of trying to remember everything, I wanted to build a simple application where all these items could be stored and managed in one place.
+The application stores inventory data in a JSON file and provides a simple command-line interface to manage items and check their expiry status.
 
-More than solving the problem itself, this project helped me understand how different OOP concepts work together in a real application.
+## Features
 
-# Why I Built This
-
-While learning Python, I noticed that many beginner projects are things like student management systems or library management systems.
-
-I wanted to build something a little different something that could actually solve a small real world problem.
-
-At home, medicines expire without anyone noticing, groceries sometimes stay in the fridge longer than they should, and important documents like passports or insurance papers have renewal dates that are easy to forget.
-
-So I decided to build **SmartExpiry**.
-
-It became a great way to practice Object Oriented Programming while building something useful.
-
-
-# Features
-
-The current version of SmartExpiry allows you to:
-
-- Add new items
+- Add new inventory items
 - View all stored items
-- Search items
-- Update item details
+- Search items by name
+- Update existing items
 - Delete items
-- Check which items have expired
-- Check which items are safe
-- Save all data to a JSON file
-- Automatically load saved data when the application starts
+- Check expired items
+- View items expiring soon
+- Automatically save data to JSON
+- Load saved data when the application starts
 
-Everything runs through a simple command line menu.
+## Supported Categories
 
-
-# Supported Categories
-
-At the moment, SmartExpiry supports three types of items:
+Currently, the application supports three types of inventory items:
 
 - 💊 Medicine
 - 🛒 Grocery
 - 📄 Document
 
-Each category stores its own information while still sharing common properties through inheritance.
+Each category stores its own details while sharing common functionality through inheritance.
 
+## OOP Concepts Used
 
-# OOP Concepts Used
-
-The main purpose of this project was to practice Object Oriented Programming.
-
-While building SmartExpiry, I used concepts like:
+This project helped me apply several core Object Oriented Programming concepts, including:
 
 - Classes and Objects
 - Constructors (`__init__`)
@@ -65,12 +42,13 @@ While building SmartExpiry, I used concepts like:
 - Encapsulation
 - Polymorphism
 
-Instead of learning these concepts only through examples, this project helped me understand how they work together in a real application.
-
-# Project Structure
+## Project Structure
 
 ```text
 SmartExpiry/
+│
+├── assets/
+│   └── screenshots/
 │
 ├── data/
 │   └── inventory.json
@@ -79,53 +57,52 @@ SmartExpiry/
 │   ├── item.py
 │   ├── medicine.py
 │   ├── grocery.py
-│   └── document.py
+│   └── documents.py
 │
 ├── services/
 │   └── inventory.py
 │
 ├── .gitignore
-├── main.py
-└── README.md
+├── LICENSE
+├── README.md
+└── main.py
 ```
 
-# How It Works
-
-The application follows a simple flow.
+## How It Works
 
 ```text
-Start Program
-      │
-      ▼
-Load inventory.json
-      │
-      ▼
+Start Application
+        │
+        ▼
+Load Inventory
+        │
+        ▼
 Display Menu
-      │
-      ▼
-User Chooses an Option
-      │
-      ▼
-Perform the Operation
-      │
-      ▼
+        │
+        ▼
+Choose an Operation
+        │
+        ▼
+Update Inventory
+        │
+        ▼
 Save Changes
-      │
-      ▼
+        │
+        ▼
 Exit
 ```
-# Technologies Used
+
+## Technologies Used
 
 - Python
-- Object-Oriented Programming (OOP)
+- Object Oriented Programming
 - JSON
 - File Handling
 - Datetime Module
-- OS Module
 
-No external libraries are used in this project.
+No external libraries are required.
 
-# Getting Started
+## Getting Started
 
 ### Clone the repository
 
@@ -133,7 +110,7 @@ No external libraries are used in this project.
 git clone https://github.com/<your-username>/SmartExpiry.git
 ```
 
-### Go to the project folder
+### Navigate to the project
 
 ```bash
 cd SmartExpiry
@@ -145,83 +122,61 @@ cd SmartExpiry
 python main.py
 ```
 
-
 ## 📸 Screenshots
 
 ### Main Menu
 
 <p align="center">
-  <img src="assets/screenshots/menu.png" width="700">
+  <img src="assets/screenshots/menu.png" alt="Main Menu" width="700">
 </p>
 
 ### View Items
 
 <p align="center">
-  <img src="assets/screenshots/view items.png" width="700">
+  <img src="assets/screenshots/view-items.png" alt="View Items" width="700">
 </p>
 
 ### Add Item
 
 <p align="center">
-  <img src="assets/screenshots/add item.png" width="700">
+  <img src="assets/screenshots/add-item.png" alt="Add Item" width="700">
 </p>
 
 ### Expiry Report
 
 <p align="center">
-  <img src="assets/screenshots/expiry report.png" width="700">
+  <img src="assets/screenshots/expiry-report.png" alt="Expiry Report" width="700">
 </p>
 
-# What I Learned
+## What I Learned
 
-This project taught me much more than just writing Python classes.
+Building SmartExpiry gave me hands-on experience with:
 
-Some of the things I learned while building SmartExpiry are:
+- Designing applications using OOP
+- Organizing Python projects into multiple modules
+- Working with inheritance and method overriding
+- Reading and writing JSON files
+- Building a menu driven CLI application
+- Applying input validation and basic error handling
+- Using Git and GitHub to manage a project
 
-- How to design classes for a real application
-- When to use inheritance
-- How method overriding works
-- Working with JSON files
-- Reading and writing files
-- Organizing a Python project into multiple files
-- Building a menu-driven application
-- Thinking about code structure before writing code
+## Future Improvements
 
-This project gave me a much better understanding of Object Oriented Programming than practicing individual examples.
+Some ideas I'd like to explore in future versions:
 
-
-# Future Improvements
-
-There are still many ideas I'd like to add in future versions.
-
-Some of them are:
-
-- Web version using Flask
-- SQLite or MySQL database
-- User login
+- Flask web application
+- SQLite or MySQL integration
+- User authentication
 - Email reminders
 - Barcode scanner
-- Dashboard
-- Export to CSV/PDF
+- Dashboard and analytics
+- Export to CSV or PDF
 - Cloud backup
-- Mobile application
 
-For now, I wanted to keep the project focused on learning Python and OOP fundamentals.
+## Contributing
 
-# Contributing
-
-If you have any suggestions or ideas to improve this project, feel free to open an issue or submit a pull request.
-
-I'm always open to learning better ways of building software.
+Suggestions and improvements are always welcome. Feel free to open an issue or submit a pull request.
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
-
-# Final Thoughts
-
-SmartExpiry started as a way to practice Object Oriented Programming, but along the way it became one of the projects that helped me understand how different programming concepts come together to build a complete application.
-
-There are still many improvements I'd like to make, but I'm happy with this first version and excited to continue improving it as I learn more.
-
-If you took the time to check out this project, thank you! 
+This project is licensed under the MIT License. See the `LICENSE` file for more information.
