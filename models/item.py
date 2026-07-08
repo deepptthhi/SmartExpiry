@@ -3,7 +3,10 @@ from datetime import datetime
 
 class Item:
     """
-    Base class for every inventory item.
+    Represents a generic inventory item.
+
+    All specific item types such as Medicine, Grocery,
+    and Document inherit from this class.
     """
 
     def __init__(self, item_id, name, category, quantity, expiry_date):
@@ -15,7 +18,8 @@ class Item:
 
     def days_left(self):
         """
-        Returns the number of days left until the expiry.
+        Calculate and return the number of days left
+        until the item expires.
         """
 
         today = datetime.today().date()
@@ -25,21 +29,19 @@ class Item:
 
     def is_expired(self):
         """
-        Returns True if the item has expired.
+        Check whether the item has already expired.
         """
 
         return self.days_left() < 0
 
     def display(self):
         """
-        Displays item details.
+        Display the common details of an inventory item.
         """
 
-        print(f"""
-ID        : {self.item_id}
-Name      : {self.name}
-Category  : {self.category}
-Quantity  : {self.quantity}
-Expiry    : {self.expiry_date}
-Days Left : {self.days_left()}
-""")
+        print(f"ID        : {self.item_id}")
+        print(f"Name      : {self.name}")
+        print(f"Category  : {self.category}")
+        print(f"Quantity  : {self.quantity}")
+        print(f"Expiry    : {self.expiry_date}")
+        print(f"Days Left : {self.days_left()}")

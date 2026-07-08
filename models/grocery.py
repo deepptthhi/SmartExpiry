@@ -3,6 +3,10 @@ from models.item import Item
 
 class Grocery(Item):
 
+    """
+    Represents a grocery item.
+    """
+
     def __init__(self, item_id, name, quantity, expiry_date, weight):
 
         super().__init__(
@@ -14,6 +18,10 @@ class Grocery(Item):
         )
 
         self.weight = weight
+
+    """
+    Display grocery details.
+    """
 
     def display(self):
 
