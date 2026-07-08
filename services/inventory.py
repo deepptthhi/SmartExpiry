@@ -95,6 +95,67 @@ class Inventory:
                 return
 
         print("\nItem not found.")
+
+    # ------------------------
+    # Check Expiry
+    # ------------------------
+
+    def check_expiry(self):
+
+        expired = []
+        today = []
+        soon = []
+        safe = []
+
+        for item in self.items:
+
+            days = item.days_left()
+
+            if days < 0:
+                expired.append(item)
+
+            elif days == 0:
+                today.append(item)
+
+            elif days <= 7:
+                soon.append(item)
+
+            else:
+                safe.append(item)
+
+        print("\n========== EXPIRY REPORT ==========\n")
+
+        print("❌ Expired")
+
+        if expired:
+            for item in expired:
+                print(f"- {item.name}")
+        else:
+            print("None")
+
+        print("\n⚠ Expiring Today")
+
+        if today:
+            for item in today:
+                print(f"- {item.name}")
+        else:
+            print("None")
+
+        print("\n🟡 Expiring Within 7 Days")
+
+        if soon:
+            for item in soon:
+                print(f"- {item.name} ({item.days_left()} day(s) left)")
+        else:
+            print("None")
+
+        print("\n✅ Safe")
+
+        if safe:
+            for item in safe:
+                print(f"- {item.name} ({item.days_left()} day(s) left)")
+        else:
+            print("None")
     
     # ------------------------
     # Save Items
