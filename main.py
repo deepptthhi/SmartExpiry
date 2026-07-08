@@ -1,3 +1,5 @@
+
+from datetime import datetime 
 from services.inventory import Inventory
 
 from models.medicine import Medicine
@@ -14,10 +16,60 @@ def create_item():
 
     category = input("\nEnter your choice: ")
 
-    item_id = int(input("Item ID: "))
-    name = input("Item Name: ")
-    quantity = int(input("Quantity: "))
-    expiry = input("Expiry Date (DD-MM-YYYY): ")
+    #item id
+    while True:
+
+        try:
+            item_id = int(input("Item ID: "))
+
+            if item_id <= 0:
+                print("Item ID must be greater than 0.")
+                continue
+
+            break
+
+        except ValueError:
+            print("Please enter a valid number.")
+
+    #item name
+    while True:
+
+        name = input("Item Name: ").strip()
+
+        if name:
+            break
+
+        print("Item name cannot be empty.")
+
+    #quantity
+    while True:
+
+        try:
+
+            quantity = int(input("Quantity: "))
+
+            if quantity <= 0:
+                print("Quantity must be greater than 0.")
+                continue
+
+            break
+
+        except ValueError:
+            print("Please enter a valid number.")
+
+    #expiry 
+    while True:
+
+        expiry = input("Expiry Date (DD-MM-YYYY): ").strip()
+
+        try:
+
+            datetime.strptime(expiry, "%d-%m-%Y")
+            break
+
+        except ValueError:
+
+            print("Please enter the date in DD-MM-YYYY format.")
 
     if category == "1":
 
@@ -90,7 +142,11 @@ def main():
 
         display_menu()
 
-        choice = input("\nEnter your choice: ")
+        choice = input("\nEnter your choice: ").strip()
+
+        if choice not in ["1", "2", "3", "4", "5", "6", "7"]:
+            print("\nInvalid choice. Please enter a number between 1 to 7.")
+            continue
 
         if choice == "1":
 
@@ -126,18 +182,29 @@ def main():
 
             print("\n" + "-" * 45)
 
-            item_id = int(input("Enter Item ID: "))
+            try:
+                item_id = int(input("Enter Item ID: "))
 
-            inventory.delete_item(item_id)
+            except ValueError:
+                print("\n Item ID must be a number.")
+                continue
+
+            inventory.update_item(item_id)
             inventory.save_items()
 
         elif choice == "5":
 
             print("\n" + "-" * 45)
 
-            item_id = int(input("Enter Item ID: "))
+            try:
+                item_id = int(input("Enter Item ID: "))
 
-            inventory.update_item(item_id)
+            except ValueError:
+                print("\n Item ID must be a number.")
+                continue
+
+            
+            inventory.delete_item(item_id)
             inventory.save_items()
 
         elif choice == "6":
