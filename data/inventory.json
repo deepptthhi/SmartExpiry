@@ -17,5 +17,15 @@
         "expiry_date": "20-01-2030",
         "issued_by": "Government of India",
         "type": "Document"
+    },
+    {
+        "item_id": 4,
+        "name": "dolo",
+        "category": "Medicine",
+        "quantity": 5,
+        "expiry_date": "25-07-2026",
+        "manufacturer": "cipla",
+        "dosage": "650 mg",
+        "type": "Medicine"
     }
 ]

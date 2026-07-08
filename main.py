@@ -1,14 +1,80 @@
 from services.inventory import Inventory
 
+from models.medicine import Medicine
+from models.grocery import Grocery
+from models.documents import Document
+
+
+def create_item():
+
+    print("\nChoose Category")
+    print("1. Medicine")
+    print("2. Grocery")
+    print("3. Document")
+
+    category = input("\nEnter your choice: ")
+
+    item_id = int(input("Item ID: "))
+    name = input("Item Name: ")
+    quantity = int(input("Quantity: "))
+    expiry = input("Expiry Date (DD-MM-YYYY): ")
+
+    if category == "1":
+
+        manufacturer = input("Manufacturer: ")
+        dosage = input("Dosage: ")
+
+        return Medicine(
+            item_id,
+            name,
+            quantity,
+            expiry,
+            manufacturer,
+            dosage
+        )
+
+    elif category == "2":
+
+        weight = input("Weight: ")
+
+        return Grocery(
+            item_id,
+            name,
+            quantity,
+            expiry,
+            weight
+        )
+
+    elif category == "3":
+
+        issued_by = input("Issued By: ")
+
+        return Document(
+            item_id,
+            name,
+            quantity,
+            expiry,
+            issued_by
+        )
+
+    else:
+
+        print("\nInvalid category.")
+
+        return None
+    
 
 def display_menu():
 
     print("\n" + "=" * 40)
     print("📦 SmartExpiry")
     print("=" * 40)
-    print("1. View Items")
-    print("2. Check Expiry")
-    print("3. Exit")
+
+    print("1. Add Item")
+    print("2. View Items")
+    print("3. Search Item")
+    print("4. Check Expiry")
+    print("5. Exit")
 
 
 def main():
@@ -18,20 +84,39 @@ def main():
     inventory.load_items()
 
     while True:
-
         display_menu()
 
         choice = input("\nEnter your choice: ")
-
+        
         if choice == "1":
 
-            inventory.view_items()
+            item = create_item()
+
+            if item:
+                inventory.add_item(item)
+                inventory.save_items()
 
         elif choice == "2":
 
-            inventory.check_expiry()
+            inventory.view_items()
 
         elif choice == "3":
+
+            name = input("\nEnter item name: ")
+
+            item = inventory.search_item(name)
+
+            if item:
+                print("\nItem Found!\n")
+                item.display()
+            else:
+                print("\nItem not found.")
+
+        elif choice == "4":
+
+            inventory.check_expiry()
+
+        elif choice == "5":
 
             inventory.save_items()
 
@@ -41,8 +126,7 @@ def main():
 
         else:
 
-            print("\nInvalid choice. Please try again.")
-
+            print("\nInvalid choice.")
 
 if __name__ == "__main__":
     main()
