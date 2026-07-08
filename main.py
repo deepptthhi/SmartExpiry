@@ -66,31 +66,35 @@ def create_item():
 
 def display_menu():
 
-    print("\n" + "=" * 40)
-    print("📦 SmartExpiry")
-    print("=" * 40)
+    print("\n" + "=" * 45)
+    print("📦              SmartExpiry")
+    print("=" * 45)
 
     print("1. Add Item")
     print("2. View Items")
     print("3. Search Item")
-    print("4. Delete Item")
-    print("5. Update Item")
+    print("4. Update Item")
+    print("5. Delete Item")
     print("6. Check Expiry")
     print("7. Exit")
+
+    print("=" * 45)
 
 
 def main():
 
     inventory = Inventory()
-
     inventory.load_items()
 
     while True:
+
         display_menu()
 
         choice = input("\nEnter your choice: ")
-        
+
         if choice == "1":
+
+            print("\n" + "-" * 45)
 
             item = create_item()
 
@@ -100,37 +104,45 @@ def main():
 
         elif choice == "2":
 
+            print("\n" + "-" * 45)
+
             inventory.view_items()
 
         elif choice == "3":
 
-            name = input("\nEnter item name: ")
+            print("\n" + "-" * 45)
+
+            name = input("Enter item name: ")
 
             item = inventory.search_item(name)
 
             if item:
-                print("\nItem Found!\n")
+                print("\n Item Found!\n")
                 item.display()
             else:
-                print("\nItem not found.")
+                print("\n Item not found.")
 
         elif choice == "4":
 
-            item_id = int(input("\nEnter Item ID: "))
+            print("\n" + "-" * 45)
+
+            item_id = int(input("Enter Item ID: "))
 
             inventory.delete_item(item_id)
-
             inventory.save_items()
 
         elif choice == "5":
 
-            item_id = int(input("\nEnter Item ID: "))
+            print("\n" + "-" * 45)
+
+            item_id = int(input("Enter Item ID: "))
 
             inventory.update_item(item_id)
-
             inventory.save_items()
 
         elif choice == "6":
+
+            print("\n" + "-" * 45)
 
             inventory.check_expiry()
 
@@ -138,13 +150,16 @@ def main():
 
             inventory.save_items()
 
-            print("\nThank you for using SmartExpiry!")
+            print("\n" + "=" * 45)
+            print(" Thank you for using SmartExpiry!")
+            print("Have a great day!")
+            print("=" * 45)
 
             break
 
         else:
 
-            print("\nInvalid choice.")
+            print("\n Invalid choice. Please try again.")
 
 if __name__ == "__main__":
     main()
