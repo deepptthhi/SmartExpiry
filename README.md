@@ -157,19 +157,19 @@ python main.py
 ### View Items
 
 <p align="center">
-  <img src="assets/screenshots/view-items.png" width="700">
+  <img src="assets/screenshots/view items.png" width="700">
 </p>
 
 ### Add Item
 
 <p align="center">
-  <img src="assets/screenshots/add-item.png" width="700">
+  <img src="assets/screenshots/add item.png" width="700">
 </p>
 
 ### Expiry Report
 
 <p align="center">
-  <img src="assets/screenshots/expiry-report.png" width="700">
+  <img src="assets/screenshots/expiry report.png" width="700">
 </p>
 
 # What I Learned
