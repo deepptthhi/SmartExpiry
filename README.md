@@ -2,7 +2,7 @@
 
 > My first Python OOP project — built to solve a simple everyday problem.
 
-SmartExpiry is a simple Python project I built while learning **Object-Oriented Programming (OOP)**.
+SmartExpiry is a simple Python project I built while learning **Object Oriented Programming (OOP)**.
 
 The idea came from a small everyday problem. We often forget expiry dates of medicines, groceries, or even important documents until it's too late. Instead of trying to remember everything, I wanted to build a simple application where all these items could be stored and managed in one place.
 
@@ -152,7 +152,7 @@ When the application starts, you'll see a menu like this:
 
 ```text
 ========================================
-📦 SmartExpiry
+           📦 SmartExpiry
 ========================================
 
 1. Add Item
@@ -182,22 +182,23 @@ Dosage         : 650 mg
 ### Example Expiry Report
 
 ```text
-========== EXPIRY REPORT ==========
+========  EXPIRY REPORT  ========
 
-❌ Expired
+Expired:
 None
 
-⚠ Expiring Today
+Expiring Today:
 None
 
-🟡 Expiring Within 7 Days
+Expiring Within 7 Days:
 None
 
-✅ Safe
+Safe:
 - Dolo 650 (12 day(s) left)
 - Passport (1292 day(s) left)
-```
 
+=================================
+```
 
 # What I Learned
 
