@@ -74,8 +74,9 @@ def display_menu():
     print("2. View Items")
     print("3. Search Item")
     print("4. Delete Item")
-    print("5. Check Expiry")
-    print("6. Exit")
+    print("5. Update Item")
+    print("6. Check Expiry")
+    print("7. Exit")
 
 
 def main():
@@ -123,9 +124,17 @@ def main():
 
         elif choice == "5":
 
-            inventory.check_expiry()
+            item_id = int(input("\nEnter Item ID: "))
+
+            inventory.update_item(item_id)
+
+            inventory.save_items()
 
         elif choice == "6":
+
+            inventory.check_expiry()
+
+        elif choice == "7":
 
             inventory.save_items()
 
