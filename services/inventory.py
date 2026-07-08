@@ -1,6 +1,9 @@
 import json
 import os
 
+from models.medicine import Medicine
+from models.grocery import Grocery
+from models.documents import Document
 
 class Inventory:
 
@@ -88,11 +91,51 @@ class Inventory:
     def load_items(self):
 
         if not os.path.exists(self.file_path):
-
             return
 
         with open(self.file_path, "r") as file:
-
             data = json.load(file)
 
-        print(f"\nLoaded {len(data)} item(s) from storage.")
+        self.items = []
+
+        for item in data:
+
+            item_type = item["type"]
+
+            if item_type == "Medicine":
+
+                obj = Medicine(
+                    item["item_id"],
+                    item["name"],
+                    item["quantity"],
+                    item["expiry_date"],
+                    item["manufacturer"],
+                    item["dosage"]
+                )
+
+            elif item_type == "Grocery":
+
+                obj = Grocery(
+                    item["item_id"],
+                    item["name"],
+                    item["quantity"],
+                    item["expiry_date"],
+                    item["weight"]
+                )
+
+            elif item_type == "Document":
+
+                obj = Document(
+                    item["item_id"],
+                    item["name"],
+                    item["quantity"],
+                    item["expiry_date"],
+                    item["issued_by"]
+                )
+
+            else:
+                continue
+
+            self.items.append(obj)
+
+        print(f"\nLoaded {len(self.items)} item(s).")
