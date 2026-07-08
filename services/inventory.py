@@ -11,16 +11,16 @@ class Inventory:
         self.items = []
         self.file_path = "data/inventory.json"
 
-    # ------------------------
-    # Add Item
-    # ------------------------
+    
+    # Add a new item to the inventory
+
     def add_item(self, item):
         self.items.append(item)
         print(f"\n'{item.name}' added successfully!")
 
-    # ------------------------
-    # View Items
-    # ------------------------
+    
+    # Display all items
+    
     def view_items(self):
 
         if not self.items:
@@ -31,11 +31,10 @@ class Inventory:
 
         for item in self.items:
             item.display()
-            print("-" * 40)
+            print("-" * 45)
 
-    # ------------------------
-    # Search Item
-    # ------------------------
+    # Save inventory to JSON
+
     def search_item(self, name):
 
         for item in self.items:
@@ -45,9 +44,9 @@ class Inventory:
 
         return None
 
-    # ------------------------
-    # Delete Item
-    # ------------------------
+    
+    #Delete Item
+   
     def delete_item(self, item_id):
 
         for item in self.items:
@@ -63,9 +62,8 @@ class Inventory:
         print("\nItem not found.")
 
 
-    # ------------------------
     # Update Item
-    # ------------------------
+    
 
     def update_item(self, item_id):
 
@@ -96,10 +94,9 @@ class Inventory:
 
         print("\nItem not found.")
 
-    # ------------------------
-    # Check Expiry
-    # ------------------------
 
+    #Check Expiry
+    
     def check_expiry(self):
 
         expired = []
@@ -125,7 +122,7 @@ class Inventory:
 
         print("\n========== EXPIRY REPORT ==========\n")
 
-        print("❌ Expired")
+        print("Expired:")
 
         if expired:
             for item in expired:
@@ -133,7 +130,7 @@ class Inventory:
         else:
             print("None")
 
-        print("\n⚠ Expiring Today")
+        print("\n Expiring Today:")
 
         if today:
             for item in today:
@@ -141,7 +138,7 @@ class Inventory:
         else:
             print("None")
 
-        print("\n🟡 Expiring Within 7 Days")
+        print("\nExpiring Within 7 Days:")
 
         if soon:
             for item in soon:
@@ -149,7 +146,7 @@ class Inventory:
         else:
             print("None")
 
-        print("\n✅ Safe")
+        print("\nSafe:")
 
         if safe:
             for item in safe:
@@ -157,9 +154,9 @@ class Inventory:
         else:
             print("None")
     
-    # ------------------------
-    # Save Items
-    # ------------------------
+   
+    #Save Items
+  
 
     def save_items(self):
 
@@ -179,9 +176,9 @@ class Inventory:
 
         print("\nInventory saved successfully!")
 
-    # ------------------------
-    # Load Items
-    # ------------------------
+
+    #Load Items
+    
 
     def load_items(self):
 
