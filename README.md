@@ -241,6 +241,9 @@ If you have any suggestions or ideas to improve this project, feel free to open 
 
 I'm always open to learning better ways of building software.
 
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
 # Final Thoughts
 
