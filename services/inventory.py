@@ -31,6 +31,7 @@ class Inventory:
 
         for item in self.items:
             item.display()
+            print()
             print("-" * 45)
 
     # Save inventory to JSON

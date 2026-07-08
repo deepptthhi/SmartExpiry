@@ -146,59 +146,31 @@ python main.py
 ```
 
 
-# Menu
+## 📸 Screenshots
 
-When the application starts, you'll see a menu like this:
+### Main Menu
 
-```text
-========================================
-           📦 SmartExpiry
-========================================
+<p align="center">
+  <img src="assets/screenshots/menu.png" width="700">
+</p>
 
-1. Add Item
-2. View Items
-3. Search Item
-4. Update Item
-5. Delete Item
-6. Check Expiry
-7. Exit
-```
+### View Items
 
-Simply enter the number of the operation you want to perform.
+<p align="center">
+  <img src="assets/screenshots/view-items.png" width="700">
+</p>
 
-# Example
+### Add Item
 
-### Adding a Medicine
+<p align="center">
+  <img src="assets/screenshots/add-item.png" width="700">
+</p>
 
-```text
-Category       : Medicine
-Name           : Dolo 650
-Quantity       : 10
-Expiry Date    : 20-07-2026
-Manufacturer   : Micro Labs
-Dosage         : 650 mg
-```
+### Expiry Report
 
-### Example Expiry Report
-
-```text
-========  EXPIRY REPORT  ========
-
-Expired:
-None
-
-Expiring Today:
-None
-
-Expiring Within 7 Days:
-None
-
-Safe:
-- Dolo 650 (12 day(s) left)
-- Passport (1292 day(s) left)
-
-=================================
-```
+<p align="center">
+  <img src="assets/screenshots/expiry-report.png" width="700">
+</p>
 
 # What I Learned
 
